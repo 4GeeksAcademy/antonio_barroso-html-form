@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulario con SCSS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a href="../index.html" class="back-link">← Volver al inicio</a>
+
+  <main class="form-container">
+      <form class="formulario">
+        <!-- DATOS PERSONALES -->
+          <h2>Datos personales</h2>
+          <div class="grid-2">
+            <div class="campo input-wrapper">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" required />
+            </div>
+            <div class="campo input-wrapper">
+              <label for="apellidos">Apellidos</label>
+              <input type="text" id="apellidos" required />
+            </div>
+      
+            <div class="campo input-wrapper">
+              <label for="email">Correo electrónico</label>
+              <input type="email" id="email" required />
+            </div>
+            <div class="campo input-wrapper">
+              <label for="telefono">Teléfono</label>
+              <input type="tel" id="telefono" />
+            </div>
+      
+            <div class="campo input-wrapper">
+              <label for="fechaNacimiento">Fecha de nacimiento</label>
+              <input type="date" id="fechaNacimiento" />
+            </div>
+            <div class="campo input-wrapper">
+              <label>Género</label>
+              <div class="radio-row">
+                <label><input type="radio" name="genero" value="masculino" /> Masculino</label>
+                <label><input type="radio" name="genero" value="femenino" /> Femenino</label>
+              </div>
+            </div>
+          </div>
+          <hr />
+      
+        <!-- INFORMACIÓN PROFESIONAL -->
+          <h2>Información profesional</h2>
+          <div class="grid-2">
+            <div class="campo input-wrapper">
+              <label for="puesto">Puesto al que aplicas</label>
+              <select id="puesto" required>
+                <option value="">Selecciona un puesto</option>
+                <option>Frontend Developer</option>
+                <option>Backend Developer</option>
+                <option>Fullstack Developer</option>
+                <option>Mobile Developer</option>
+                <option>DevOps Engineer</option>
+              </select>
+            </div>
+            <div class="campo input-wrapper">
+              <label for="salario">Salario anual deseado (€)</label>
+              <input type="number" id="salario" placeholder="30000" min="18000" max="120000" required />
+            </div>
+          </div>
+          <div class="campo input-wrapper">
+            <label for="experiencia">Años de experiencia: <span id="valorExperiencia">0</span></label>
+            <input type="range" id="experiencia" min="0" max="10" step="1" />
+          </div>
+          <hr />
+      
+        <!-- PREFERENCIAS -->
+          <h2>Preferencias adicionales</h2>
+          <div class="grid-2">
+            <div class="campo input-wrapper">
+              <label for="color">Color de avatar</label>
+              <input type="color" id="color" value="#563d7c" />
+            </div>
+            <div class="campo input-wrapper">
+              <label for="cv">Sube tu CV (PDF)</label>
+              <input type="file" id="cv" accept=".pdf" />
+            </div>
+          </div>
+      
+          <div class="campo input-wrapper">
+            <label for="comentarios">Comentarios adicionales</label>
+            <textarea id="comentarios" placeholder="Cuéntanos tu experiencia..."></textarea>
+          </div>
+      
+          <div class="checkbox-row">
+            <label><input type="checkbox" id="info" /> Deseo recibir información comercial</label>
+            <label><input type="checkbox" id="terms" required /> Acepto los términos y condiciones</label>
+          </div>
+      
+        <!-- BOTONES -->
+        <div class="acciones">
+          <button type="reset" class="btn-secondary">Limpiar</button>
+          <button type="submit" class="btn-primary">Enviar</button>
+        </div>
+      </form>
+  </main>
+  
+
+  <script>
+    const range = document.getElementById("experiencia");
+    const span = document.getElementById("valorExperiencia");
+    span.textContent = range.value;
+    range.addEventListener("input", () => {
+      span.textContent = range.value;
+    });
+  </script>
+</body>
+</html>

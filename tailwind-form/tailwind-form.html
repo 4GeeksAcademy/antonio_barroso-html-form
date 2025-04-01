@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulario con Tailwind</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center justify-start py-8 px-4">
+
+  <a href="../index.html" class="text-blue-600 hover:underline self-start mb-4">
+    ← Volver al inicio
+  </a>
+
+  <div class="w-full max-w-3xl bg-white p-8 rounded shadow-md">
+    <h1 class="text-2xl font-bold mb-6 text-center">Formulario con Tailwind</h1>
+
+    <form>
+      <!-- DATOS PERSONALES -->
+      <h2 class="text-xl font-semibold mb-4">Datos personales</h2>
+      <div class="grid md:grid-cols-2 gap-4 mb-4">
+        <div>
+          <label for="nombre" class="block font-medium mb-1">Nombre</label>
+          <input type="text" id="nombre" class="w-full border border-gray-300 rounded px-3 py-2" required>
+        </div>
+        <div>
+          <label for="apellidos" class="block font-medium mb-1">Apellidos</label>
+          <input type="text" id="apellidos" class="w-full border border-gray-300 rounded px-3 py-2" required>
+        </div>
+        <div>
+          <label for="email" class="block font-medium mb-1">Correo electrónico</label>
+          <input type="email" id="email" class="w-full border border-gray-300 rounded px-3 py-2" required>
+        </div>
+        <div>
+          <label for="telefono" class="block font-medium mb-1">Teléfono de contacto</label>
+          <input type="tel" id="telefono" class="w-full border border-gray-300 rounded px-3 py-2">
+        </div>
+        <div>
+          <label for="fechaNacimiento" class="block font-medium mb-1">Fecha de nacimiento</label>
+          <input type="date" id="fechaNacimiento" class="w-full border border-gray-300 rounded px-3 py-2">
+        </div>
+        <div>
+          <span class="block font-medium mb-1">Género</span>
+          <div class="flex gap-4">
+            <label class="flex items-center gap-2">
+              <input type="radio" name="genero" value="masculino" class="accent-blue-600">
+              Masculino
+            </label>
+            <label class="flex items-center gap-2">
+              <input type="radio" name="genero" value="femenino" class="accent-blue-600">
+              Femenino
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <hr class="my-6" />
+
+      <!-- INFORMACIÓN PROFESIONAL -->
+      <h2 class="text-xl font-semibold mb-4">Información profesional</h2>
+      <div class="grid md:grid-cols-2 gap-4 mb-4">
+        <div>
+          <label for="puesto" class="block font-medium mb-1">Puesto al que aplicas</label>
+          <select id="puesto" class="w-full border border-gray-300 rounded px-3 py-2" required>
+            <option value="">Selecciona un puesto</option>
+            <option>Frontend Developer</option>
+            <option>Backend Developer</option>
+            <option>Fullstack Developer</option>
+            <option>Mobile Developer</option>
+            <option>DevOps Engineer</option>
+          </select>
+        </div>
+        <div>
+          <label for="salario" class="block font-medium mb-1">Salario anual deseado (€)</label>
+          <input type="number" id="salario" placeholder="30000" min="18000" max="120000" class="w-full border border-gray-300 rounded px-3 py-2" required>
+        </div>
+      </div>
+
+      <div class="mb-6">
+        <label for="experiencia" class="block font-medium mb-1">Años de experiencia: <span id="valorExperiencia">0</span></label>
+        <input type="range" id="experiencia" min="0" max="10" step="1" class="w-full" required>
+      </div>
+
+      <hr class="my-6" />
+
+      <!-- PREFERENCIAS ADICIONALES -->
+      <h2 class="text-xl font-semibold mb-4">Preferencias adicionales</h2>
+      <div class="grid md:grid-cols-2 gap-4 mb-4">
+        <div>
+          <label for="color" class="block font-medium mb-1">Color de avatar</label>
+          <input type="color" id="color" class="w-12 h-10 p-1 border border-gray-300 rounded" value="#563d7c">
+        </div>
+        <div>
+          <label for="cv" class="block font-medium mb-1">Sube tu CV (PDF)</label>
+          <input type="file" id="cv" accept=".pdf" class="w-full border border-gray-300 rounded px-3 py-2">
+        </div>
+      </div>
+
+      <div class="mb-6">
+        <label for="comentarios" class="block font-medium mb-1">Comentarios adicionales</label>
+        <textarea id="comentarios" rows="3" class="w-full border border-gray-300 rounded px-3 py-2" placeholder="Cuenta brevemente tu experiencia..."></textarea>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-4 mb-6">
+        <label class="flex items-center gap-2">
+          <input type="checkbox" id="info" class="accent-blue-600">
+          Deseo recibir información comercial
+        </label>
+
+        <label class="flex items-center gap-2">
+          <input type="checkbox" id="terms" required class="accent-blue-600">
+          Acepto los términos y condiciones
+        </label>
+      </div>
+
+      <div class="flex gap-4">
+        <button type="reset" class="w-full bg-gray-300 hover:bg-gray-400 text-gray-800 py-2 px-4 rounded">Limpiar</button>
+        <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded">Enviar</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const rangeInput = document.getElementById('experiencia');
+    const valorSpan = document.getElementById('valorExperiencia');
+    valorSpan.textContent = rangeInput.value;
+    rangeInput.addEventListener('input', () => {
+      valorSpan.textContent = rangeInput.value;
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+
+/*  
+
+  
+  .footer{
+    display: flex;
+    gap:10px;
+    font-size: 30px;
+    margin-top: 10%
+  }
+
+  .footer a:hover{
+    transform: scale(1.55);
+  }
+  p{
+    margin-top:0;
+    padding-top:0;
+  } */
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #e5e7eb;
+    color: #111827;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+  }
+  
+  h2 {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    font-weight: 400;
+  }
+
+  
+  .icons-link {
+    display: flex;
+    gap: 75px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+
+  .tech-card {
+    width: 120px;
+    height: 120px;
+    border-radius: 14px;
+    background-color: rgb(234, 227, 227);
+    box-shadow: 0 0 15px 15px rgba(247, 6, 6, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+  }
+  
+
+  .tech-card:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 0 16px 15px rgba(211, 39, 151, 0.5);
+    background-color: #242323;
+  }
+  
+  .tech-card img {
+    max-width: 60%;
+    max-height: 60%;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .footer {
+    display: flex;
+    gap: 20px;
+    font-size: 1.8rem;
+    margin-top: 4rem;
+  }
+  
+  .footer a {
+    color: #1f2937;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .footer a:hover {
+    transform: scale(1.5);
+    color: #2563eb;
+  }
+  
+  p {
+    margin: 0;
+    color: #374151;
+  }
+  
