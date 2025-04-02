@@ -43,15 +43,19 @@ h2 {
 .campo input,
 .campo select,
 .campo textarea {
-  padding: 0.5rem;
+  padding: 0 5px;
   height: 40px;
   border: 1px solid #ced4da;
   border-radius: 6px;
   font-size: 1rem;
 }
 .campo textarea {
-  height: auto;
+  height: 50px;
+  padding: 10px;
   resize: vertical;
+}
+.campo input[type=file] {
+  align-content: center;
 }
 
 .campo-full {
@@ -137,7 +141,8 @@ img.colorpick-eyedropper-input-trigger {
 .radio-row {
   display: flex;
   gap: 2rem;
-  margin-top: 0.3rem;
+  justify-content: space-evenly;
+  margin: auto 0;
 }
 .radio-row label {
   font-weight: normal;
@@ -147,7 +152,6 @@ img.colorpick-eyedropper-input-trigger {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  margin-top: 1rem;
   justify-content: space-around;
 }
 .checkbox-row label {

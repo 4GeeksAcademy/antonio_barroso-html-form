@@ -15,9 +15,7 @@ $box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
 $font-stack: 'Segoe UI', sans-serif;
 
-$input-padding: 0.5rem;
 $input-font-size: 1rem;
-$input-height: 40px;
 
 $button-padding: 0.75rem 1.5rem;
 $button-font-size: 1rem;
@@ -80,16 +78,21 @@ h2 {
   input,
   select,
   textarea {
-    padding: $input-padding;
-    height: $input-height;
+    padding: 0 5px;
+    height: 40px;
     border: 1px solid $border-color;
     border-radius: $border-radius;
     font-size: $input-font-size;
   }
 
   textarea {
-    height: auto;
+    height: 50px;
+    padding: 10px;
     resize: vertical;
+  }
+
+  input[type='file']{
+    align-content: center;
   }
 }
 
@@ -196,7 +199,8 @@ img.colorpick-eyedropper-input-trigger {
 .radio-row {
     display: flex;
     gap: 2rem;
-    margin-top: 0.3rem;
+    justify-content: space-evenly;
+    margin: auto 0;
   
     label {
       font-weight: normal;
@@ -207,7 +211,6 @@ img.colorpick-eyedropper-input-trigger {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
-    margin-top: 1rem;
     justify-content: space-around;
   
     label {
