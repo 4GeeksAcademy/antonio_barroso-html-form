@@ -146,6 +146,8 @@ img.colorpick-eyedropper-input-trigger {
 }
 .radio-row label {
   font-weight: normal;
+  display: flex;
+  align-items: center;
 }
 
 .checkbox-row {
